@@ -1,0 +1,49 @@
+<RestClientRequest>
+  <option name="biscuits">
+    <list>
+      <Biscuit>
+        <option name="date" value="-1" />
+        <option name="domain" value="127.0.0.1" />
+        <option name="name" value="s" />
+        <option name="path" value="/b2c/branch_v2.2_clearing" />
+        <option name="value" value="3522d306f1ccd11cc40529e362877a88" />
+      </Biscuit>
+      <Biscuit>
+        <option name="date" value="-1" />
+        <option name="domain" value="127.0.0.1" />
+        <option name="name" value="USER_IDENTIFY_ID" />
+        <option name="path" value="/b2c/branch_v2.2_clearing/" />
+        <option name="value" value="public" />
+      </Biscuit>
+    </list>
+  </option>
+  <option name="httpMethod" value="POSTh" />
+  <option name="urlBase" value="http://127.0.0.1" />
+  <option name="urlPath" value="/b2c/branch_v2.2_clearing/index.php/b2cphone/order/create" />
+  <option name="headers">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="Accept" />
+        <option name="value" value="*/*" />
+      </KeyValuePair>
+      <KeyValuePair>
+        <option name="key" value="Cache-Control" />
+        <option name="value" value="no-cache" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parameters">
+    <list>
+      <KeyValuePair>
+        <option name="key" value="params" />
+        <option name="value" value="hIfkHLnEhexOZPKRGFunB1brfiZPolWWkzGy5LojDNmUykBh2RojRB3243hanrSZT4Co2VmfR0lzIAaXaWKBDtqflPdzVjofkuTa6BvQpxdgSmph90NDV+vuCED/UMdFzbZvUSBLeBbz4Y4HDwgGbss++5u1V5SZi1T6JRl4duNIoArhRfVlqTf01RnmXxyQaB5s57cb5NWWPTwZshmRcqdPFcjOvXN4EQ1ltv+QXRUCzblVAFnZsL3Xq50Kfn9LyM2Bsr/OA4E9TuiWSieGR/XkjSE32dcqrEK+HsHVJiPzdxNO49pY6+bobYvOhfBq8bK6d+7aDXH1Ud6pSN2h/Xl5thqnWFqPypApHUWj2uQs9VAbF76iPizyX1kZPnEo" />
+      </KeyValuePair>
+    </list>
+  </option>
+  <option name="parametersEnabled" value="true" />
+  <option name="haveTextToSend" value="false" />
+  <option name="haveFileToSend" value="false" />
+  <option name="isFileUpload" value="false" />
+  <option name="textToSend" value="" />
+  <option name="filesToSend" value="" />
+</RestClientRequest>
