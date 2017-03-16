@@ -8,7 +8,6 @@ import time
 import socket
 reload(sys)
 sys.setdefaultencoding('utf-8')
-
 #socket.setdefaulttimeout(120)
 
 class Spider:  
@@ -76,16 +75,23 @@ class Spider:
     def downImage(self,url,dirname,count):  
         imageUrl = url  
         request = urllib2.Request(imageUrl,headers = self.headers)
-        try:
-            response = urllib2.urlopen(request,None,20)
-            imageContents = response.read()
-            response.close()
-        except urllib2.URLError, e:
-            print e.reason
-            return
-        except socket.timeout, e:
-            print url+u"socket time out"
-            return
+        trytimes = 3
+        while trytimes > 0:
+            try:
+                response = urllib2.urlopen(request,None,20)
+                imageContents = response.read()
+                response.close()
+                break
+            except urllib2.URLError, e:
+                print e.reason
+                break
+                return
+            except socket.timeout, e:
+                print url+u" socket time out"
+                trytimes = trytimes - 1
+                continue
+                if trytimes == 1:
+                    return
 
         urlArr = imageUrl.split(u".")  
         imageType = str(urlArr[len(urlArr)-1])  
@@ -104,16 +110,18 @@ class Spider:
         url = "/artkt/index"+str(PageIndex)+".html"  
         contents = self.getIndex(url)  
 
-        for list in contents:  
-            dirname  = list[0]  
-            imageUrl = list[1]  
-            self.getContent(imageUrl,dirname)
+        if not contents is None:
+            for list in contents:  
+                dirname  = list[0]  
+                imageUrl = list[1]  
+                self.getContent(imageUrl,dirname)
 
 rooturl     = "http://www.cecepa.com"  
-filterstr   = "∏ﬂ÷ ¡øCG"
+filterstr   = "»≠ª "
 demo = Spider(rooturl,filterstr)  
 print "start"
 for page in range(1,150):  
     print page
     demo.downLoadAllPicture(page)  
+    time.sleep(5)
 print "end"
